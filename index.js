@@ -77,12 +77,18 @@ If you need help choosing a license, refer to https://choosealicense.com/\n`,
 }];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) =>
+  err ? console.error(err) : console.log('README.md file has been created.'))
+}
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions);
+  return inquirer.prompt(questions);
 }
 
 // Function call to initialize app
-init();
+init()
+.then(answers => generateMarkdown(answers))
+.then(data => writeToFile('README.md', data))
+.catch(err => console.log(err))

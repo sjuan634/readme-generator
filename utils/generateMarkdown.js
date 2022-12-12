@@ -121,7 +121,6 @@ function generateMarkdown(data) {
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
-  * [Credits](#credits)
   
   ## Description
   ${data.projDesc}
