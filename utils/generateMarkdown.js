@@ -1,5 +1,3 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
   let licBadge = ``;
   switch (license) {
@@ -49,8 +47,6 @@ function renderLicenseBadge(license) {
   return licBadge;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
 function renderLicenseLink(license) {
   let licLink = ``;
   switch (license) {
@@ -100,20 +96,20 @@ function renderLicenseLink(license) {
   return licLink;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+
 function renderLicenseSection(license) {
-  !license ? '' : `## Licenses
-    This project is covered under the ${license} license. To learn more about what this means, click the license button at the top.`
+  let licenseSec = '';
+  !license ? licenseSec = 'N/A' : licenseSec =`This project is covered under the ${license} license. To learn more about what this means, click the license button at the top.`
+  return licenseSec
 }
 
-// TODO: Create a function to generate markdown for README
+
 function generateMarkdown(data) {
   return `# ${data.projTitle}
 
-  ${renderLicenseBadge(data.projLic)}
+${renderLicenseBadge(data.projLic)}
 
-  ## Table of Contents
+## Table of Contents
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
@@ -122,27 +118,28 @@ function generateMarkdown(data) {
   * [Tests](#tests)
   * [Questions](#questions)
   
-  ## Description
-  ${data.projDesc}
+## Description
+${data.projDesc}
 
-  ## Installation
-  ${data.projInstall}
+## Installation
+${data.projInstall}
 
-  ## Usage
-  ${data.projUsage}
+## Usage
+${data.projUsage}
 
-  ${renderLicenseSection(data.projLic)}
+## Licenses
+${renderLicenseSection(data.projLic)}
 
-  ## Contributing
-  ${data.projContribute}
+## Contributing
+${data.projContribute}
 
-  ## Tests
-  ${data.projTest}
+## Tests
+${data.projTest}
 
-  ## Questions
-  Have questions about this project?  
-  GitHub: https://github.com/${data.github}  
-  Email: ${data.email}
+## Questions
+Have questions about this project?  
+GitHub: https://github.com/${data.github}  
+Email: ${data.email}
 `;
 }
 
