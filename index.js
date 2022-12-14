@@ -76,7 +76,7 @@ If you need help choosing a license, refer to https://choosealicense.com/\n`,
 }];
 
 function writeToFile(fileName, data) {
-  fs.writeFile(`./output/${fileName}`, data, (err) =>
+  fs.writeFile(fileName, data, (err) =>
   err ? console.error(err) : console.log('README.md file has been created.'))
 }
 
