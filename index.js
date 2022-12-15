@@ -57,12 +57,12 @@ If you need help choosing a license, refer to https://choosealicense.com/\n`,
 {
   type: 'input',
   name: 'projContribute',
-  message: 'How can other contribute to this project?\n'
+  message: 'How can others contribute to this project?\n'
 },
 {
   type: 'input',
   name: 'projTest',
-  message: 'Provide any tests for you project.\n'
+  message: 'Provide any tests for your project.\n'
 },
 {
   type: 'input',
